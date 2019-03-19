@@ -1,0 +1,12 @@
+## production environment config for MySQL
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sfg_prod
+    username: sfg_prod_user
+    password: prodpassword    #password typically passed in via environment variable, for security reasons
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    show-sql: false         #turn off debug sql statements

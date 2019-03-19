@@ -1,0 +1,24 @@
+## dev environment config for MySQL,  active profiles can be set in IDE run/debug configuration
+## Spring Boot will configure this datasource for us
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sfg_dev
+    username: sfg_dev_user
+    password: devpassword   #password typically passed in via environment variable, for security reasons
+  jpa:
+    hibernate:
+      ddl-auto: validate    #tell hibernate to validate the schema
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: mysql
+    show-sql: true
+    ## the following lines tell hibernate to generate a schema for us based on our entity objects. We can then run this
+    ## schema on a mysql console to create our database tables. The generated schema will be saved in
+    ## [project-root]/dev_database_create.sql
+#    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: dev_database_create.sql

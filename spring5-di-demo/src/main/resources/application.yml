@@ -1,0 +1,14 @@
+#application.yml is the default name for the Spring Boot YAML properties file
+guru:
+  jms:
+    username: JMS Username
+    password: somepassword
+    url: someURL
+
+# 3 dashes is a file seperator in YAML
+---
+spring:
+  profiles: de
+guru:
+  jms:
+    username: JMS GERMAN $$$$ USERNAME
